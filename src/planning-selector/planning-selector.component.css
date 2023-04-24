@@ -1,3 +1,10 @@
 .free{
   background-color:darkseagreen
 }
+.complete{
+  background-color:darkgrey
+}
+
+.uncomplete{
+  background-color: azure
+}

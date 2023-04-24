@@ -13,7 +13,11 @@
 
  <table>
    <tr *ngFor="let timeslot of timeslots">
-    <td class="{{timeslot.status}}">{{timeslot.start  | date:'medium'}} - {{timeslot.end | date:'medium'}}</td>
+    <td class="{{timeslot.status}}">{{timeslot.start  | date:'short'}} - {{timeslot.end | date:'short'}}
+        <span *ngFor="let booking of timeslot.bookingList">
+          <li>{{booking.by.firstName}} {{booking.by.lastName}}</li>
+        </span>
+    </td>
    </tr>
  </table>
 </form>
