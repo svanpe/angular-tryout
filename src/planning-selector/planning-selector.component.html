@@ -14,7 +14,8 @@
  <table>
    <tr *ngFor="let timeslot of timeslots">
     <td class="{{timeslot.status}}">{{timeslot.start  | date:'short'}} - {{timeslot.end | date:'short'}}
-        <span *ngFor="let booking of timeslot.bookingList">
+      <button *ngIf="timeslot.status=='free' || timeslot.status=='uncomplete'">s'inscrire</button>  
+      <span *ngFor="let booking of timeslot.bookingList">
           <li>{{booking.by.firstName}} {{booking.by.lastName}}</li>
         </span>
     </td>

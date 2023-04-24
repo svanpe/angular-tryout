@@ -1,4 +1,4 @@
-<h1>Angular Router Sample</h1>
+<h1>Publisher planning</h1>
 <nav>
   <a class="button"
      routerLink="/planning-selector"
@@ -6,12 +6,19 @@
      ariaCurrentWhenActive="page">
     Plannifier
   </a> |
+  <a class="button"
+  routerLink="/my-bookings"
+  routerLinkActive="activebutton"
+  ariaCurrentWhenActive="page">
+ Mes réservations
+</a>
 </nav>
 <router-outlet></router-outlet>
 
 <div style="display: none;">
 <!-- This HTML represents the initial state for the tutorial. It is not intended to appear in the app. -->
 <app-planning-selector></app-planning-selector>
+<app-my-bookings></app-my-bookings>
 
 
 <!-- This HTML snippet is for when the user first adds the routerlink navigation. -->

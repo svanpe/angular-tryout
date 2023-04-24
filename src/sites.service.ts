@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Booking } from './model/booking';
 import { Site, Timeslot } from './model/models';
 
 @Injectable({
@@ -16,7 +17,13 @@ export class SitesService {
     {start: new Date('2024-04-24 17:00:00'), end: new Date('2024-04-24 18:00:00'), bookingList:[{by: {firstName:'Anthon', lastName:'Joubert'}}], status:"uncomplete"}
   ];
 
+  bookings: Booking[] = [{id:1, by:{}, start: new Date("2024-04-24 15:00:00"), end:new Date("2024-04-24 16:00:00"), site: {label:"lion"}}];
+
   getSites(){
     return this.sites;
+  }
+
+  getMyBookings(){
+    return this.bookings;
   }
 }

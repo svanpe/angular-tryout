@@ -1,0 +1,5 @@
+<table>
+  <tr *ngFor="let booking of myBookings">
+   <td>{{booking.site.label}} --> {{booking.start   | date:'short'}} - {{booking.end   | date:'short'}} <button>supprimer</button> </td>
+  </tr>
+</table>

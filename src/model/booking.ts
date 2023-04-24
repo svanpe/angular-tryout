@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
  import { Publisher } from './publisher';
+ import { Site } from './site';
 
  export interface Booking { 
      id?: number;
@@ -17,4 +18,5 @@
      when?: Date;
      start?: Date;
      end?: Date;
+     site?: Site;
  }
