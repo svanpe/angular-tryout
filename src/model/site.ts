@@ -16,6 +16,7 @@
    * parcel Status
    */
   status?: Site.StatusEnum;
+  label?: string;
 }
 export namespace Site {
   export type StatusEnum = 'active' | 'suspended';

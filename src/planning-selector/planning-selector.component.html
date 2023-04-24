@@ -1,2 +1,19 @@
-<p>it works
-</p>
+<p>Sélectionnez un site et une date dans le mois</p>
+<form>
+
+  <label>Service Name</label>
+  <select>
+
+    <option *ngFor="let site of sites" [value]="site.id">
+      {{site.label}}
+    </option>
+  </select>
+
+ <full-calendar [options]="calendarOptions"> </full-calendar>
+
+ <table>
+   <tr *ngFor="let timeslot of timeslots">
+    <td class="{{timeslot.status}}">{{timeslot.start  | date:'medium'}} - {{timeslot.end | date:'medium'}}</td>
+   </tr>
+ </table>
+</form>
