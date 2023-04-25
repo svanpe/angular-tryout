@@ -9,9 +9,10 @@ export class SitesService {
 
   constructor() { }
 
-  sites: Site[] = [ {id:1, status:'active', label: 'Le Lion (sacs)' }, {id: 2, status:'active', label: 'Le marché de jolis bois'} ];
+  sites: Site[] = [ {id:0, status:'active', label: 'Le Lion (sacs)' }, {id: 1, status:'active', label: 'Le marché de jolis bois'} ];
 
-  timeslots: Timeslot[] = [
+
+  timeslots1: Timeslot[ ] = [
     {start: new Date('2024-04-24 15:00:00'), end: new Date('2024-04-24 16:00:00'), bookingList:[], status:"free"},
     {start: new Date('2024-04-24 16:00:00'), end: new Date('2024-04-24 17:00:00'), bookingList:[{by: {firstName:'Grégoire', lastName:'Dupont'}},{by: {firstName:'Gilles', lastName:'Mentor'}}], status:"complete"},
     {start: new Date('2024-04-24 17:00:00'), end: new Date('2024-04-24 18:00:00'), bookingList:[{by: {firstName:'Anthon', lastName:'Joubert'}}], status:"uncomplete"},
@@ -20,7 +21,19 @@ export class SitesService {
     {start: new Date('2024-04-26 17:00:00'), end: new Date('2024-04-26 18:00:00'), bookingList:[{by: {firstName:'Anthon', lastName:'Joubert'}}], status:"uncomplete"}
   ];
 
+  timeslots: Timeslot[ ] = [
+    {start: new Date('2024-04-24 15:00:00'), end: new Date('2024-04-24 16:00:00'), bookingList:[], status:"free"},
+    {start: new Date('2024-04-24 16:00:00'), end: new Date('2024-04-24 17:00:00'), bookingList:[{by: {firstName:'Jean', lastName:'Paternout'}},{by: {firstName:'Gaetand', lastName:'Bienfait'}}], status:"complete"},
+    {start: new Date('2024-04-24 17:00:00'), end: new Date('2024-04-24 18:00:00'), bookingList:[{by: {firstName:'Igor', lastName:'Pasheliev'}}], status:"uncomplete"},
+    {start: new Date('2024-04-25 15:00:00'), end: new Date('2024-04-25 16:00:00'), bookingList:[], status:"free"},
+    {start: new Date('2024-04-26 16:00:00'), end: new Date('2024-04-26 17:00:00'), bookingList:[{by: {firstName:'Grégoire', lastName:'Dupont'}},{by: {firstName:'Gilles', lastName:'Mentor'}}], status:"complete"},
+    {start: new Date('2024-04-26 17:00:00'), end: new Date('2024-04-26 18:00:00'), bookingList:[{by: {firstName:'Anthon', lastName:'Joubert'}}], status:"uncomplete"}
+  ];
+
   bookings: Booking[] = [{id:1, by:{}, start: new Date("2024-04-24 15:00:00"), end:new Date("2024-04-24 16:00:00"), site: {label:"Le Lion"}}];
+
+  mapTimeSlots: Map<string, Timeslot[]> = new Map([["0",this.timeslots]
+                                                  , ["1",this.timeslots1]]);
 
   getSites(){
     return this.sites;
@@ -31,11 +44,11 @@ export class SitesService {
   }
 
 
-  getTimeslots(_date?: Date){
+  getTimeslots(_date: Date, _site:string){
+    console.log(this.mapTimeSlots.get(_site));
+    return this.mapTimeSlots.get(_site).filter((value) => value.start.getDate() == _date.getDate() );
 
-    const filtered = this.timeslots.filter((value) => value.start.getDate() == _date.getDate() );
-
-    return filtered;
+    
   }
 
   getMyBookings(){

@@ -11,7 +11,7 @@ export class TimeslotsListComponent implements OnChanges , OnInit  {
 
   @Input() selectedDate = new Date();
   @Input() selectedSite = 0;
-  timeslots: Timeslot[] = this.sitesService.getTimeslots(this.selectedDate);
+  timeslots: Timeslot[] = this.sitesService.getTimeslots(this.selectedDate, this.selectedSite.toString());
 
   constructor( private sitesService: SitesService) 
   {  }
@@ -21,7 +21,7 @@ export class TimeslotsListComponent implements OnChanges , OnInit  {
   }
 
   ngOnChanges(changes: SimpleChanges) { 
-    
-    this.timeslots = this.sitesService.getTimeslots(this.selectedDate);
+    console.log(this.selectedSite);
+    this.timeslots = this.sitesService.getTimeslots(this.selectedDate, this.selectedSite.toString());
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CalendarOptions } from '@fullcalendar/core'
+import frLocale from '@fullcalendar/core/locales/fr';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { Site } from '../model/models';
@@ -39,7 +40,7 @@ export class PlanningSelectorComponent implements OnInit {
       },
       dateClick: this.onDateClick.bind(this),
       events: [],
-     
+      locale: frLocale
 
     };
 
