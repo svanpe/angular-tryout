@@ -2,7 +2,7 @@
 <table>
 <tr *ngFor="let timeslot of timeslots">
  <td class="{{timeslot.status}}">{{timeslot.start | date:'shortTime' }} - {{timeslot.end | date:'shortTime'}}
-   <button *ngIf="timeslot.status=='free' || timeslot.status=='uncomplete'">s'inscrire</button>  
+   <button *ngIf="timeslot.status=='free' || timeslot.status=='uncomplete'" ng-click="subscribe(timeslot)">s'inscrire</button>  
    <span *ngFor="let booking of timeslot.bookingList">
        <li>{{booking.by.firstName}} {{booking.by.lastName}}</li>
      </span>

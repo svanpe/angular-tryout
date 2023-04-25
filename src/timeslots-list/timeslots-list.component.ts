@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges  } from '@angular/core';
-import { Timeslot } from '../model/models';
+import { Timeslot, Booking } from '../model/models';
 import { SitesService} from '../sites.service';
 
 @Component({
@@ -23,5 +23,10 @@ export class TimeslotsListComponent implements OnChanges , OnInit  {
   ngOnChanges(changes: SimpleChanges) { 
     console.log(this.selectedSite);
     this.timeslots = this.sitesService.getTimeslots(this.selectedDate, this.selectedSite.toString());
+  }
+
+  subscribe(timeslot : Timeslot){
+    let booking: Booking = {start:timeslot.start, end: timeslot.end, site: {id:this.selectedSite}};
+     this.sitesService.addBooking(booking);
   }
 }
