@@ -1,27 +1,29 @@
-body {
-  font-family: 'Roboto';
+
+.free:hover { 
+  background-color: #2CA893;
+  cursor: pointer;
 }
 
-.days {
-  width: 1000px;
+.uncomplete:hover { 
+  background-color:   rgb(42, 111, 240);
+  ;
+  cursor: pointer;
 }
 
-.day {
-  width: 120px;
-  height: 230px;
-  background-color: #efeff6;
-  padding:10px;
-  float:left;
-  margin-right:7px;
-  margin-bottom:5px;
+.free{
+  background-color:#00c09d;
+  width: auto;
+  height: 20px;
+  color: white;
+  padding:7px;
+  margin-top: 5px;
+  font-size: 14px;
+  border-radius: 3px;
+  vertical-align: center;
+  text-align:center;
 }
-
-.datelabel {
-  margin-bottom: 15px;
-}
-
-.timeslot {
-  background-color: #00c09d;
+.complete{
+  background-color:darkgrey;
   width: auto;
   height: 20px;
   color: white;
@@ -33,42 +35,32 @@ body {
   text-align:center;
 }
 
-.timeslot:hover { 
-  background-color: #2CA893;
-  cursor: pointer;
-}
-
-.free{
-  background-color:darkseagreen
-}
-.complete{
-  background-color:darkgrey
-}
-
 .uncomplete{
-  background-color: azure
+  background-color: cornflowerblue;
+  width: auto;
+  height: 20px;
+  color: white;
+  padding:7px;
+  margin-top: 5px;
+  font-size: 14px;
+  border-radius: 3px;
+  vertical-align: center;
+  text-align:center;
 }
 
-.button {
+button {
   box-shadow: inset 0 1px 0 0 #ffffff;
   background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-  border-radius: 6px;
+  border-radius: 3px;
   border: 1px solid #dcdcdc;
   display: inline-block;
   cursor: pointer;
   color: #666666;
   font-family: Arial, sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 6px 24px;
+  padding: 6px 10px;
   text-decoration: none;
   text-shadow: 0 1px 0 #ffffff;
   outline: 0;
-}
-.activebutton {
-  box-shadow: inset 0 1px 0 0 #dcecfb;
-  background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
-  border: 1px solid #84bbf3;
-  color: #ffffff;
-  text-shadow: 0 1px 0 #528ecc;
 }

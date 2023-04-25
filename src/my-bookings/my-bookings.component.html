@@ -1,5 +1,6 @@
 <table>
-  <tr *ngFor="let booking of myBookings">
-   <td>{{booking.site.label}} - {{booking.start   | date:'dd-MM-YYYY'}} [ {{booking.start   | date:'shortTime'}} - {{booking.end   | date:'shortTime'}} ] <button>supprimer</button> </td>
+  <tr *ngFor="let booking of myBookings" class="booking">
+   <td>{{booking.site.label}}  {{booking.start   | date:'dd-MM-YYYY'}}
+   [ {{booking.start   | date:'shortTime'}} - {{booking.end   | date:'shortTime'}} ] <button>supprimer</button> </td>
   </tr>
 </table>

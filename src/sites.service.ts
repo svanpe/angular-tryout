@@ -40,17 +40,11 @@ export class SitesService {
   }
 
   addBooking(booking: Booking){
-    console.log(booking);
     this.bookings.push(booking);
-    console.log(this.bookings);
   }
 
-
   getTimeslots(_date: Date, _site:string){
-    
     return this.mapTimeSlots.get(_site).filter((value) => value.start.getDate() == _date.getDate() );
-
-    
   }
 
   getMyBookings(){
