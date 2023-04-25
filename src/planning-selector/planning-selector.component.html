@@ -1,24 +1,16 @@
 <p>Sélectionnez un site et une date dans le mois</p>
 <form>
 
-  <label>Service Name</label>
-  <select>
+  <label>Site</label>
+  <select (change)="onChange(getValue($event))">
 
-    <option *ngFor="let site of sites" [value]="site.id">
+    <option *ngFor="let site of sites; let i = index" [value]="site.id" [attr.selected]='i==selectedSite ? "selected" : null'>
       {{site.label}}
     </option>
   </select>
 
  <full-calendar [options]="calendarOptions"> </full-calendar>
 
- <table>
-   <tr *ngFor="let timeslot of timeslots">
-    <td class="{{timeslot.status}}">{{timeslot.start  | date:'short'}} - {{timeslot.end | date:'short'}}
-      <button *ngIf="timeslot.status=='free' || timeslot.status=='uncomplete'">s'inscrire</button>  
-      <span *ngFor="let booking of timeslot.bookingList">
-          <li>{{booking.by.firstName}} {{booking.by.lastName}}</li>
-        </span>
-    </td>
-   </tr>
- </table>
+ <app-timeslots-list [selectedDate]="selectedDate" [selectedSite]="selectedSite" ></app-timeslots-list>
+
 </form>
