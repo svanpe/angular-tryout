@@ -52,7 +52,6 @@ export class PlanningSelectorComponent implements OnInit {
   }
 
   onChange(siteValue) {
-    console.log(siteValue);
     this.selectedSite = siteValue;
   }
 

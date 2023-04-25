@@ -26,7 +26,8 @@ export class TimeslotsListComponent implements OnChanges , OnInit  {
   }
 
   subscribe(timeslot : Timeslot){
-    let booking: Booking = {start:timeslot.start, end: timeslot.end, site: {id:this.selectedSite}};
-     this.sitesService.addBooking(booking);
+    const booking: Booking = {start:timeslot.start, end: timeslot.end, site: {id:this.selectedSite}};
+    console.log("coucou");
+    this.sitesService.addBooking(booking);
   }
 }
